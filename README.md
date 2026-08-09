@@ -1,9 +1,10 @@
 # Personal Cognitive Operating System (PCOS v32 Hub)
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-BSL_1.1-orange.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Colab Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/SDRmsung/PCOS)
 [![arXiv](https://img.shields.io/badge/arXiv-v32_Hub-b31b1b.svg)](https://github.com/SDRmsung/PCOS)
+
 
 PCOS (Personal Cognitive Operating System) is a deterministic, white-box neuro-causal decision and safety architecture designed for high-stakes edge AI applications. The core **v32 Hub** (`pcos_core_engine`) provides a zero-dependency, pure-CPU execution engine unifying **LeCun's JEPA latent representation energy**, **Yu Ma's white-box rate reduction ($MCR^2$)**, **Judea Pearl's Ladder L3 counterfactual engine**, and **Logarithmic Control Barrier Functions (CBFs)**, delivering sub-millisecond hard safety guarantees with zero sycophancy ($SS = 0.00$) and a zero fatal hallucination rate ($\text{FHR} = 0.00\%$).
 
@@ -14,7 +15,7 @@ PCOS (Personal Cognitive Operating System) is a deterministic, white-box neuro-c
 ```text
 PCOS/ (Root: https://github.com/SDRmsung/PCOS.git)
 ├── README.md                           # Public Open-Source Specification & Usage Guide
-├── LICENSE                             # Apache-2.0 Open-Source License
+├── LICENSE                             # Business Source License 1.1 (BSL 1.1)
 ├── setup.py                            # Pip-installable package setup (pip install pcos-latent)
 ├── cambridge_phaal_roadmap/            # 5-Layer Technical Roadmap & System Blueprint (v32 Aligned)
 │   ├── L0-README.md                    # Layer 0: Fundamental Philosophy & Architecture
@@ -106,6 +107,16 @@ print(f"Safety Gate Passed: {is_safe}, Barrier Energy: {energy:.4f}")
 
 ---
 
-## 📄 License
+## 📄 License & Commercial Terms
 
-This project is licensed under the Apache 2.0 License. See [LICENSE](35-Areas/A33_ESG/outputs/agents-mvp/presentations/agents-mvp/node_modules/@oai/artifact-tool/LICENSE.md) for details.
+PCOS is dual-licensed under the **Business Source License 1.1 (BSL 1.1)**:
+- **Academic & Evaluation Use**: Free for non-production, academic research, and personal evaluation.
+- **Free Production Threshold**: Free in production for entities with $< 100$ end-users AND $< \$1,000,000\text{ USD}$ annual revenue.
+- **Automatic Conversion**: Converts automatically to **Apache License 2.0** on **2028-08-09**.
+
+### For Commercial License & VC Due Diligence
+For enterprise production, commercial SaaS, embedded hardware/medical deployments exceeding the free limits, or for obtaining private heavy model weights and production modules across the 5 Spokes (Control / SysML / Cognitive / Edge / Psychology):
+
+📩 **Contact**: [shihyu0326@gmail.com](mailto:shihyu0326@gmail.com)  
+🏛️ **Affiliation**: Feng Chia University, Taiwan
+
