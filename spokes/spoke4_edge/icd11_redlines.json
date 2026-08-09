@@ -1,0 +1,17 @@
+{
+  "version": "WHO ICD-11 2024-01",
+  "redlines": [
+    {
+      "code": "E83.0",
+      "disease": "Wilson Disease",
+      "contraindication": "High Copper Intake (>1.5mg/day)",
+      "risk_level": "FATAL"
+    },
+    {
+      "code": "D55.0",
+      "disease": "G6PD Deficiency",
+      "contraindication": "Fava Beans / Oxidative Agents",
+      "risk_level": "FATAL"
+    }
+  ]
+}

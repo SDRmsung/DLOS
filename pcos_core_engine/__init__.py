@@ -19,7 +19,7 @@ from .comprehensive_causal_ood_benchmark import SyntheticSCMCausalBenchmark, Fac
 from .v30_p0_experiments import V30P0ExperimentSuite
 from .benchmark_harness import PCOSBenchmarkRunner
 
-__version__ = "30.0.0"
+__version__ = "v32.0.0"
 __all__ = [
     "NeSySafetyFilter",
     "ICD_REDLINE_DICTIONARY",

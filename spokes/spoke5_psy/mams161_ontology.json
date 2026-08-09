@@ -1,0 +1,14 @@
+{
+  "ontology_name": "MAMS-161 (Multi-Attractor Motive Structure)",
+  "dimension": 9,
+  "phase_spaces": 6,
+  "motive_count": 161,
+  "topological_spaces": [
+    {"name": "S1_Cognitive_Curiosity", "dimension": 9, "subspace_rank": 4},
+    {"name": "S2_Social_Affiliation", "dimension": 9, "subspace_rank": 3},
+    {"name": "S3_Safety_Self_Preservation", "dimension": 9, "subspace_rank": 5},
+    {"name": "S4_Autonomy_Agency", "dimension": 9, "subspace_rank": 4},
+    {"name": "S5_Moral_NeSy_Alignment", "dimension": 9, "subspace_rank": 6},
+    {"name": "S6_Aesthetic_Sintering", "dimension": 9, "subspace_rank": 3}
+  ]
+}

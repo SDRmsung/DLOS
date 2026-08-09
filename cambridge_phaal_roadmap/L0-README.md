@@ -1,6 +1,6 @@
 ---
 id: area_node_20260808
-title: L0: Fundamental Philosophy & Architecture (PCOS v31)
+title: L0: Fundamental Philosophy & Architecture (PCOS v32 Hub + 5 Spokes)
 aliases:
   - Layer 0
 description: SYS|TEMPLATE|TPL|CAMBRIDGE_ROADMAP
@@ -10,32 +10,36 @@ tags:
 type: wiki_moc
 compiler_status: stable
 created: 2026-08-08
-updated: 2026-08-08
+updated: 2026-08-09
 ---
 
-# L0: Fundamental Philosophy & Architecture (PCOS v31)
+# L0: Fundamental Philosophy & Architecture (PCOS v32 Hub & 5 Spokes)
 
-`	ext
+```text
 ========================================================================
- [Layer 0: Fundamental Philosophy] First-Principles: Parsimony | Deterministic Invariance | Free Energy
+ [Layer 0: Fundamental Philosophy] First-Principles: Hub Engine + 5 Domain Spokes Topology
 ========================================================================
-`
+```
 
-## 🏛️ Core Ideology & Technological Foundation
+## 🏛️ Core Ideology & Ecosystem Topology (v32 Final)
 
-Layer 0 embodies the soul and first-principles philosophy of the entire system (Layers 1 through 5), establishing **What** PCOS is, **Why** it exists, and **How** it guarantees absolute correctness. PCOS abandons black-box LLM probabilistic token prediction and sycophancy traps in favor of a white-box personal cognitive operating system.
+Layer 0 embodies the soul and first-principles philosophy of the entire system (Layers 1 through 5), establishing **What** PCOS is, **Why** it exists, and **How** it guarantees absolute correctness across a **Zero-Dependency Core Engine Hub (`pcos_core_engine`)** and **5 Specialized Domain Spokes (`spokes/spoke1~5`)**.
 
-`	ext
-┌─────────────────────────────────────────────────────────────────┐
-│ L0a: Parsimony & Compression (White-Box Rate Reduction / MCR^2) │
-├─────────────────────────────────────────────────────────────────┤
-│ L0b: Deterministic Invariance (Log-Barrier E_barrier / FHR=0.00%)│
-├─────────────────────────────────────────────────────────────────┤
-│ L0c: Neuro-Causal Cybernetics (JEPA + Free Energy + SCM do(a))  │
-├─────────────────────────────────────────────────────────────────┤
-│ L0d: Resource-Bounded Edge AI (S <= 50MB Memory / Offline Sinter)│
-└─────────────────────────────────────────────────────────────────┘
-`
+```text
+┌──────────────────────────────────────────────────────────────────┐
+│ L0a: Zero-Dependency Core Engine (pcos_core_engine v32.0.0 Hub)  │
+├──────────────────────────────────────────────────────────────────┤
+│ L0b: Spoke 1 - Control Barrier Theory (eess.SY / L-CSS / L4DC)   │
+├──────────────────────────────────────────────────────────────────┤
+│ L0c: Spoke 2 - MBSE SysML v2.0 Modeling (cs.SE / IEEE SMC / JSS) │
+├──────────────────────────────────────────────────────────────────┤
+│ L0d: Spoke 3 - Active Inference Free Energy (q-bio.NC / NeurIPS) │
+├──────────────────────────────────────────────────────────────────┤
+│ L0e: Spoke 4 - 50MB Edge Clinical Reasoning (cs.DC / TinyML)     │
+├──────────────────────────────────────────────────────────────────┤
+│ L0f: Spoke 5 - MAMS-161 9D Motive Manifold (Computational Psy)   │
+└──────────────────────────────────────────────────────────────────┘
+```
 
 - **L0a: Parsimony & Compression**
   - **Philosophy**: Intelligence is fundamentally extreme compression and rate reduction of sensory signals.

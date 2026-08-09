@@ -1,0 +1,53 @@
+# =====================================================================
+# 🛡️ DEFENSIVE SECURITY & PRIVACY IGNORE RULES (PCOS Open-Source Repo)
+# =====================================================================
+
+# 1. Private AI-TRIZ Vault Folders (嚴禁上傳全域知識庫目錄)
+35-Areas/
+00-System/
+10-Knowledge/
+20-Projects/
+40-Resources/
+Clippings/
+Backups/
+99-Archive/
+999-Legacy/
+.chroma_db/
+.gemini/
+.obsidian/
+scratch/
+
+# 2. Large Binary Files & Databases
+*.db
+*.sqlite3
+*.faiss
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.gguf
+*.zip
+*.tar.gz
+*.7z
+
+# 3. Ad-hoc Scripts & Root Drafts
+*.bat
+*.ps1
+JEPA_ALL_31.md
+deleted*.txt
+orphan_inventory*.csv
+batch_01_move.txt
+git_strg_history.txt
+track3_*.json
+tri_track_*.json
+
+# 4. Caches & Logs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+*.log
+*.trace
+.DS_Store
+Thumbs.db
+

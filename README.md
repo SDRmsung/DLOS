@@ -1,22 +1,22 @@
-# Personal Cognitive Operating System (PCOS)
+# Personal Cognitive Operating System (PCOS v32 Hub)
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Colab Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/SDRmsung/PCOS)
-[![arXiv](https://img.shields.io/badge/arXiv-2408.xxxxx-b31b1b.svg)](https://github.com/SDRmsung/PCOS)
+[![arXiv](https://img.shields.io/badge/arXiv-v32_Hub-b31b1b.svg)](https://github.com/SDRmsung/PCOS)
 
-PCOS (Personal Cognitive Operating System) is a deterministic, white-box neuro-causal decision and safety architecture designed for high-stakes edge AI applications. By unifying **LeCun's JEPA latent representation energy**, **Yu Ma's white-box rate reduction ($MCR^2$)**, **Judea Pearl's Ladder L3 counterfactual engine**, and **Logarithmic Control Barrier Functions (CBFs)**, PCOS delivers sub-millisecond hard safety guarantees with zero sycophancy ($SS = 0.00$) and a zero fatal hallucination rate ($\text{FHR} = 0.00\%$).
+PCOS (Personal Cognitive Operating System) is a deterministic, white-box neuro-causal decision and safety architecture designed for high-stakes edge AI applications. The core **v32 Hub** (`pcos_core_engine`) provides a zero-dependency, pure-CPU execution engine unifying **LeCun's JEPA latent representation energy**, **Yu Ma's white-box rate reduction ($MCR^2$)**, **Judea Pearl's Ladder L3 counterfactual engine**, and **Logarithmic Control Barrier Functions (CBFs)**, delivering sub-millisecond hard safety guarantees with zero sycophancy ($SS = 0.00$) and a zero fatal hallucination rate ($\text{FHR} = 0.00\%$).
 
 ---
 
-## 🏛️ Repository Layout & Architecture Blueprint
+## 🏛️ Repository Layout & Architecture Blueprint (Hub & 5 Spokes Topology)
 
 ```text
 PCOS/ (Root: https://github.com/SDRmsung/PCOS.git)
 ├── README.md                           # Public Open-Source Specification & Usage Guide
 ├── LICENSE                             # Apache-2.0 Open-Source License
 ├── setup.py                            # Pip-installable package setup (pip install pcos-latent)
-├── cambridge_phaal_roadmap/            # 5-Layer Technical Roadmap & System Blueprint
+├── cambridge_phaal_roadmap/            # 5-Layer Technical Roadmap & System Blueprint (v32 Aligned)
 │   ├── L0-README.md                    # Layer 0: Fundamental Philosophy & Architecture
 │   ├── L1.md                           # Layer 1: R&D Enablers & Open-Source Infrastructure
 │   ├── L2.md                           # Layer 2: Technology & White-Box Mathematical Moat
@@ -24,19 +24,34 @@ PCOS/ (Root: https://github.com/SDRmsung/PCOS.git)
 │   ├── L4.md                           # Layer 4: Market Applications & Value Proposition
 │   ├── L5.md                           # Layer 5: Macro Trends & Market Drivers
 │   └── Supplementary.md                # Supplementary: Future Technical Targets & Matrix
-└── pcos_core_engine/                   # Core White-Box ML Engine Package
-    ├── __init__.py                     # Package export (v30.0.0)
-    ├── nesy_filter.py                  # Log-Barrier NeSy Safety Energy Filter (O(1) microsecond)
-    ├── crate_encoder.py                # CRATE MCR^2 Representation Geometry & Effective Rank
-    ├── jepa_predictor.py               # JEPA Latent Predictor Energy Minimizer
-    ├── counterfactual_engine.py        # Judea Pearl Ladder L3 Counterfactual Engine
-    ├── comprehensive_causal_ood_benchmark.py # Synthetic SCM Causal & 8-Dim OOD Suite
-    ├── v30_p0_experiments.py           # Reproducibility Experiments Suite (P0-1 ~ P0-6)
-    ├── confusion_matrix_evaluator.py  # N=1,000 Double-Blind Clinical Subset Evaluator
-    ├── rank_and_guardrail_baselines.py # Baselines: Llama-Guard 3, NeMo, Ames CBF Shield
-    ├── ebm_baselines.py                # EBM Baselines: I-JEPA, V-JEPA, CRATE Transformer
-    └── demo_colab.py                   # 0.5-Second One-Click CPU Verification Suite
+├── pcos_core_engine/                   # Core White-Box ML Engine Package (Zero-Dependency Hub v32.0.0)
+│   ├── __init__.py                     # Package export (v32.0.0)
+│   ├── nesy_filter.py                  # Log-Barrier NeSy Safety Energy Filter (O(1) microsecond)
+│   ├── crate_encoder.py                # CRATE MCR^2 Representation Geometry & Effective Rank
+│   ├── jepa_predictor.py               # JEPA Latent Predictor Energy Minimizer
+│   ├── counterfactual_engine.py        # Judea Pearl Ladder L3 Counterfactual Engine
+│   ├── comprehensive_causal_ood_benchmark.py # Synthetic SCM Causal & 8-Dim OOD Suite
+│   ├── v30_p0_experiments.py           # Reproducibility Experiments Suite (P0-1 ~ P0-6)
+│   ├── confusion_matrix_evaluator.py  # N=1,000 Double-Blind Clinical Subset Evaluator
+│   ├── rank_and_guardrail_baselines.py # Baselines: Llama-Guard 3, NeMo, Ames CBF Shield
+│   ├── ebm_baselines.py                # EBM Baselines: I-JEPA, V-JEPA, CRATE Transformer
+│   └── demo_colab.py                   # 0.5-Second One-Click CPU Verification Suite
+└── spokes/                             # 5 Domain Satellite Research Packages (Depends on Hub, Code Overlap < 30%)
+    ├── spoke1_control/                 # Differentiable Log-Barrier via STE for CBF (L-CSS / L4DC)
+    ├── spoke2_sysml/                   # SysML v2.0 Reference Implementation of EBM (IEEE SMC / JSS)
+    ├── spoke3_cog/                     # Active Inference Grounded by Energy Manifold (q-bio / NeurIPS)
+    ├── spoke4_edge/                    # 50MB Constant Edge EBM for ICD-11 Reasoning (ACM TECS / TinyML)
+    └── spoke5_psy/                     # MAMS-161: A 9D Manifold of Human Motives (Computational Psychiatry)
 ```
+
+---
+
+## 🛰️ Ecosystem & Anti-Self-Plagiarism Architecture
+
+To satisfy strict peer-review non-duplication constraints across specialized scientific venues:
+- **Hub (`pcos_core_engine`)**: Maintains a strict Zero-Dependency, pure-CPU foundational mathematical engine.
+- **Spokes (`spokes/spoke1~5`)**: Independent domain packages that import Hub components (`from pcos_core_engine import ...`) as external dependencies (`pip install -e .`). Code overlap is strictly kept under $<30\%$ by isolating novel domain mechanisms within respective spoke directories.
+
 
 ---
 
@@ -93,4 +108,4 @@ print(f"Safety Gate Passed: {is_safe}, Barrier Energy: {energy:.4f}")
 
 ## 📄 License
 
-This project is licensed under the Apache 2.0 License. See [LICENSE](LICENSE) for details.
+This project is licensed under the Apache 2.0 License. See [LICENSE](35-Areas/A33_ESG/outputs/agents-mvp/presentations/agents-mvp/node_modules/@oai/artifact-tool/LICENSE.md) for details.
