@@ -1,7 +1,7 @@
 """
-PCOS Spoke 3: Cognitive Science & Active Inference Demo
+Dual-Loop OS Spoke 3: Cognitive Science & Active Inference Demo
 Target Venues: NeurIPS / AAAI Workshop / q-bio.NC
-Ecosystem Hook: Imports pcos_core_engine.JEPALatentPredictor
+Ecosystem Hook: Imports dual_loop_os_core_engine.JEPALatentPredictor
 """
 
 import sys
@@ -9,7 +9,7 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
-from pcos_core_engine import JEPALatentPredictor
+from dual_loop_os_core_engine import JEPALatentPredictor
 
 def run_spoke3_cog_demo():
     print("=" * 65)

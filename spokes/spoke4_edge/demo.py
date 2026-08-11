@@ -1,7 +1,7 @@
 """
-PCOS Spoke 4: Edge Clinical Computing & ICD-11 Reasoning Demo
+Dual-Loop OS Spoke 4: Edge Clinical Computing & ICD-11 Reasoning Demo
 Target Venues: ACM TECS / IEEE JBHI / TinyML
-Ecosystem Hook: Imports pcos_core_engine.NeSySafetyFilter
+Ecosystem Hook: Imports dual_loop_os_core_engine.NeSySafetyFilter
 """
 
 import sys
@@ -11,7 +11,7 @@ import time
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
-from pcos_core_engine import NeSySafetyFilter
+from dual_loop_os_core_engine import NeSySafetyFilter
 
 def run_spoke4_edge_demo():
     print("=" * 65)

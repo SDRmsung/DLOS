@@ -1,7 +1,7 @@
 """
-PCOS Spoke 1: Control Theory & CBF Verification Demo
+Dual-Loop OS Spoke 1: Control Theory & CBF Verification Demo
 Target Venues: IEEE L-CSS / L4DC / ECC
-Ecosystem Hook: Imports pcos_core_engine.NeSySafetyFilter
+Ecosystem Hook: Imports dual_loop_os_core_engine.NeSySafetyFilter
 """
 
 import sys
@@ -9,7 +9,7 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
-from pcos_core_engine import NeSySafetyFilter
+from dual_loop_os_core_engine import NeSySafetyFilter
 
 def run_spoke1_cbf_demo():
     print("=" * 65)

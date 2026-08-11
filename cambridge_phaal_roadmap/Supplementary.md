@@ -1,6 +1,6 @@
 ---
 id: area_node_20260808
-title: Supplementary: Comprehensive Technical Roadmap & Ecosystem Targets (PCOS v31)
+title: Supplementary: Comprehensive Technical Roadmap & Ecosystem Targets (Dual-Loop OS v31)
 aliases:
   - Roadmap Supplementary
 description: SYS|TEMPLATE|TPL|CAMBRIDGE_ROADMAP
@@ -13,7 +13,7 @@ created: 2026-08-08
 updated: 2026-08-08
 ---
 
-# Supplementary: Comprehensive Technical Roadmap & Ecosystem Targets (PCOS v31)
+# Supplementary: Comprehensive Technical Roadmap & Ecosystem Targets (Dual-Loop OS v31)
 
 This supplementary document details the future R&D targets and ecosystem modules extending the 5-layer Cambridge Phaal roadmap.
 
@@ -45,6 +45,6 @@ This supplementary document details the future R&D targets and ecosystem modules
 ### 3. Ecosystem Modules
 - **MAMS-161 Motivation Ontology**: 161 human motivation categories compressed into a 9D potential field $\mathbf{M}_{9\text{D}}$.
 - **ICO-28 Dysregulation Matrix**: 28 dysregulation states mapped to ICD-11 diagnostic criteria for real-time safety monitoring.
-- **PCOS-14 Embodied Bio-Chamber**: 14 non-invasive sensory interventions for real-time autonomic nervous system regulation.
+- **Dual-Loop OS-14 Embodied Bio-Chamber**: 14 non-invasive sensory interventions for real-time autonomic nervous system regulation.
 - **7-Agent Cluster**: Priority-ordered multi-agent arbitration architecture guaranteeing deadlock-free execution.
 - **SysML v2.0 Kernel**: Digital twin engine supporting 4D timeline causal tracing and MBSE standards compliance.

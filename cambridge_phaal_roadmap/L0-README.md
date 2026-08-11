@@ -1,6 +1,6 @@
 ---
 id: area_node_20260808
-title: L0: Fundamental Philosophy & Architecture (PCOS v32 Hub + 5 Spokes)
+title: L0: Fundamental Philosophy & Architecture (Dual-Loop OS v32 Hub + 5 Spokes)
 aliases:
   - Layer 0
 description: SYS|TEMPLATE|TPL|CAMBRIDGE_ROADMAP
@@ -13,7 +13,7 @@ created: 2026-08-08
 updated: 2026-08-09
 ---
 
-# L0: Fundamental Philosophy & Architecture (PCOS v32 Hub & 5 Spokes)
+# L0: Fundamental Philosophy & Architecture (Dual-Loop OS v32 Hub & 5 Spokes)
 
 ```text
 ========================================================================
@@ -23,11 +23,11 @@ updated: 2026-08-09
 
 ## 🏛️ Core Ideology & Ecosystem Topology (v32 Final)
 
-Layer 0 embodies the soul and first-principles philosophy of the entire system (Layers 1 through 5), establishing **What** PCOS is, **Why** it exists, and **How** it guarantees absolute correctness across a **Zero-Dependency Core Engine Hub (`pcos_core_engine`)** and **5 Specialized Domain Spokes (`spokes/spoke1~5`)**.
+Layer 0 embodies the soul and first-principles philosophy of the entire system (Layers 1 through 5), establishing **What** Dual-Loop OS is, **Why** it exists, and **How** it guarantees absolute correctness across a **Zero-Dependency Core Engine Hub (`dual_loop_os_core_engine`)** and **5 Specialized Domain Spokes (`spokes/spoke1~5`)**.
 
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
-│ L0a: Zero-Dependency Core Engine (pcos_core_engine v32.0.0 Hub)  │
+│ L0a: Zero-Dependency Core Engine (dual_loop_os_core_engine v32.0.0 Hub)  │
 ├──────────────────────────────────────────────────────────────────┤
 │ L0b: Spoke 1 - Control Barrier Theory (eess.SY / L-CSS / L4DC)   │
 ├──────────────────────────────────────────────────────────────────┤
@@ -65,7 +65,7 @@ Technical evaluation follows a **Top-Down Market Pull ➔ Bottom-Up Tech Push** 
 
 1. **Layer 5 (TAM & Macro Timing)**: Is the problem large and urgent? (e.g., LLM 25.8%–41.2% FHR crisis).
 2. **Layer 4 (PMF & High-Stakes Wedges)**: Are there high-cost-of-failure vertical applications? (Elderly safety, biochemical health, financial liquidity).
-3. **Layer 3 (Deliverable Assets)**: What are the commercial software products? (pcos-latent SDK, MAMS-161 engine, PCOS-14 bio-chamber).
+3. **Layer 3 (Deliverable Assets)**: What are the commercial software products? (pcos-latent SDK, MAMS-161 engine, Dual-Loop OS-14 bio-chamber).
 4. **Layer 2 (Defensible Moat)**: What is the mathematical moat? ({\text{barrier}}$, STE gating, ^2$ orthogonality, $\mathcal{S} \le 50\text{ MB}$).
 5. **Layer 1 (Open Proofs & Execution)**: Can code and theory be verified within minutes?
 
@@ -80,7 +80,7 @@ Technical evaluation follows a **Top-Down Market Pull ➔ Bottom-Up Tech Push** 
                │ (2-Way Linkage)
                ▼
 ┌──────────────────────────────┐       Post Thread & GIF             ┌──────────────────────────────┐
-│  GitHub: pcos_core_engine    │ ─────────────────────────────────►  │  X (Twitter) & LinkedIn      │
+│  GitHub: dual_loop_os_core_engine    │ ─────────────────────────────────►  │  X (Twitter) & LinkedIn      │
 │  (Code / 100k Benchmark)     │ ◄─────────────────────────────────  │  (Community & VC Outreach)   │
 └──────────────┬───────────────┘       Star / Issue Discussions       └──────────────────────────────┘
                │

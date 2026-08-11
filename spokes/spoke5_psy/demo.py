@@ -1,7 +1,7 @@
 """
-PCOS Spoke 5: Computational Psychology & MAMS-161 Ontology Demo
+Dual-Loop OS Spoke 5: Computational Psychology & MAMS-161 Ontology Demo
 Target Venues: Journal of Personality / Nature Human Behaviour
-Ecosystem Hook: Imports pcos_core_engine.WhiteBoxCRATEEncoder
+Ecosystem Hook: Imports dual_loop_os_core_engine.WhiteBoxCRATEEncoder
 """
 
 import sys
@@ -10,7 +10,7 @@ import json
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
-from pcos_core_engine import WhiteBoxCRATEEncoder
+from dual_loop_os_core_engine import WhiteBoxCRATEEncoder
 
 def run_spoke5_psy_demo():
     print("=" * 65)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-PCOS: JEPA Safety-Critical Latent Decision Architecture
+Dual-Loop OS: JEPA Safety-Critical Latent Decision Architecture
 ========================================================
 Setup script for pip-installable pcos-latent package.
 """
@@ -15,10 +15,10 @@ setup(
     long_description_content_type="text/markdown",
     author="Sovereign Decision Intelligence Team",
     author_email="research@pcos-intelligence.org",
-    url="https://github.com/SDRmsung/PCOS",
-    packages=find_packages(where="35-Areas/A42_PCOS_Personal_Decision_Intelligence/03_Agentic_Implementation"),
-    package_dir={"": "35-Areas/A42_PCOS_Personal_Decision_Intelligence/03_Agentic_Implementation"},
-    py_modules=["pcos_core_engine"],
+    url="https://github.com/SDRmsung/Dual-Loop OS",
+    packages=find_packages(where="35-Areas/A42_Dual-Loop OS_Personal_Decision_Intelligence/03_Agentic_Implementation"),
+    package_dir={"": "35-Areas/A42_Dual-Loop OS_Personal_Decision_Intelligence/03_Agentic_Implementation"},
+    py_modules=["dual_loop_os_core_engine"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Science/Research",

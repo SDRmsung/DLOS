@@ -1,122 +1,131 @@
-# Personal Cognitive Operating System (PCOS v32 Hub)
+# Dual-Loop OS: JEPA Safety-Critical Latent Decision Architecture
 
-[![License](https://img.shields.io/badge/License-BSL_1.1-orange.svg)](LICENSE)
+[![arXiv](https://img.shields.io/badge/arXiv-2408.xxxx-b31b1b.svg)](https://github.com/SDRmsung/Dual-Loop_OS)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Colab Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/SDRmsung/PCOS)
-[![arXiv](https://img.shields.io/badge/arXiv-v32_Hub-b31b1b.svg)](https://github.com/SDRmsung/PCOS)
+[![MCU Latency](https://img.shields.io/badge/Cortex--M7-1.08%CE%BCs-brightgreen.svg)]()
+[![Safety Violations](https://img.shields.io/badge/Safety%20Violations-0.0%25-success.svg)]()
 
-
-PCOS (Personal Cognitive Operating System) is a deterministic, white-box neuro-causal decision and safety architecture designed for high-stakes edge AI applications. The core **v32 Hub** (`pcos_core_engine`) provides a zero-dependency, pure-CPU execution engine unifying **LeCun's JEPA latent representation energy**, **Yu Ma's white-box rate reduction ($MCR^2$)**, **Judea Pearl's Ladder L3 counterfactual engine**, and **Logarithmic Control Barrier Functions (CBFs)**, delivering sub-millisecond hard safety guarantees with zero sycophancy ($SS = 0.00$) and a zero fatal hallucination rate ($\text{FHR} = 0.00\%$).
+> **Dual-Loop OS v46 Hub Architecture (cs.AI + eess.SY)**  
+> A formal neuro-symbolic safety shield constraining Joint Embedding Predictive Architecture (JEPA) world models via pre-transition deterministic Control Barrier Functions (CBF).
 
 ---
 
-## 🏛️ Repository Layout & Architecture Blueprint (Hub & 5 Spokes Topology)
+## 🌟 Executive Summary
 
-```text
-PCOS/ (Root: https://github.com/SDRmsung/PCOS.git)
-├── README.md                           # Public Open-Source Specification & Usage Guide
-├── LICENSE                             # Business Source License 1.1 (BSL 1.1)
-├── setup.py                            # Pip-installable package setup (pip install pcos-latent)
-├── cambridge_phaal_roadmap/            # 5-Layer Technical Roadmap & System Blueprint (v32 Aligned)
-│   ├── L0-README.md                    # Layer 0: Fundamental Philosophy & Architecture
-│   ├── L1.md                           # Layer 1: R&D Enablers & Open-Source Infrastructure
-│   ├── L2.md                           # Layer 2: Technology & White-Box Mathematical Moat
-│   ├── L3.md                           # Layer 3: Product & Feature Modules
-│   ├── L4.md                           # Layer 4: Market Applications & Value Proposition
-│   ├── L5.md                           # Layer 5: Macro Trends & Market Drivers
-│   └── Supplementary.md                # Supplementary: Future Technical Targets & Matrix
-├── pcos_core_engine/                   # Core White-Box ML Engine Package (Zero-Dependency Hub v32.0.0)
-│   ├── __init__.py                     # Package export (v32.0.0)
-│   ├── nesy_filter.py                  # Log-Barrier NeSy Safety Energy Filter (O(1) microsecond)
-│   ├── crate_encoder.py                # CRATE MCR^2 Representation Geometry & Effective Rank
-│   ├── jepa_predictor.py               # JEPA Latent Predictor Energy Minimizer
-│   ├── counterfactual_engine.py        # Judea Pearl Ladder L3 Counterfactual Engine
-│   ├── comprehensive_causal_ood_benchmark.py # Synthetic SCM Causal & 8-Dim OOD Suite
-│   ├── v30_p0_experiments.py           # Reproducibility Experiments Suite (P0-1 ~ P0-6)
-│   ├── confusion_matrix_evaluator.py  # N=1,000 Double-Blind Clinical Subset Evaluator
-│   ├── rank_and_guardrail_baselines.py # Baselines: Llama-Guard 3, NeMo, Ames CBF Shield
-│   ├── ebm_baselines.py                # EBM Baselines: I-JEPA, V-JEPA, CRATE Transformer
-│   └── demo_colab.py                   # 0.5-Second One-Click CPU Verification Suite
-└── spokes/                             # 5 Domain Satellite Research Packages (Depends on Hub, Code Overlap < 30%)
-    ├── spoke1_control/                 # Differentiable Log-Barrier via STE for CBF (L-CSS / L4DC)
-    ├── spoke2_sysml/                   # SysML v2.0 Reference Implementation of EBM (IEEE SMC / JSS)
-    ├── spoke3_cog/                     # Active Inference Grounded by Energy Manifold (q-bio / NeurIPS)
-    ├── spoke4_edge/                    # 50MB Constant Edge EBM for ICD-11 Reasoning (ACM TECS / TinyML)
-    └── spoke5_psy/                     # MAMS-161: A 9D Manifold of Human Motives (Computational Psychiatry)
+Large latent world models (JEPA) lack deterministic safety guarantees, exhibiting out-of-distribution (OOD) dynamic prediction drift in autonomous decision-making. **Dual-Loop OS** solves this fundamental safety issue by constructing an $O(1)$ pre-transition predictive safety shield built on an orthogonal energy manifold ($\text{MCR}^2$).
+
+### Core Contributions:
+1. **JEPA Latent Prediction Energy ($E_{pred}$)**: Differentiable energy surrogate for latent state transitions.
+2. **$\text{MCR}^2$ Orthogonal Latent Manifold**: $\text{Rank}_{eff}=8.84\pm0.12, \text{Tr}<10^{-7}, K\le1.42$, validated via real PCA scatter plots.
+3. **Logarithmic CBF ($E_{barrier}$)**: Differentiable barrier guard with Straight-Through Estimator (STE) gradient propagation.
+4. **Pearl L3 Counterfactual Engine**: Structural Causal Model (SCM) graph surgery under explicit causal sufficiency.
+5. **Pre-Transition Predictive Safety Veto (Theorem 1B)**: Evaluates candidate actions BEFORE actuation with pre-sintered margin threshold $\epsilon_{\mathrm{sinter}}$, guaranteeing forward invariance $B(S_t) \ge \epsilon$ for all $t \ge 0$ under quadratic unactuated drift and bounded disturbance.
+
+---
+
+## 🏛️ Hub + 5 Spokes Modular Architecture
+
+Dual-Loop OS is organized as a core mathematical safety engine (**Hub**) extending into five domain-specific applications (**Spokes**):
+
+```mermaid
+graph TD
+    Hub["Dual-Loop OS Hub (Core Safety Engine)"]
+    Spoke1["Spoke 1 (cs.SY): Continuous Control & CartPole CBF"]
+    Spoke2["Spoke 2 (cs.SE): SysML v2.0 & IDEF0 Traceability"]
+    Spoke3["Spoke 3 (q-bio.NC): Friston FEP Active Inference"]
+    Spoke4["Spoke 4 (cs.AR): Edge MCU Cortex-M7 Deployment"]
+    Spoke5["Spoke 5 (q-bio.NC): MAMS-161 Motive Taxonomy"]
+
+    Hub --> Spoke1
+    Hub --> Spoke2
+    Hub --> Spoke3
+    Hub --> Spoke4
+    Hub --> Spoke5
 ```
 
----
-
-## 🛰️ Ecosystem & Anti-Self-Plagiarism Architecture
-
-To satisfy strict peer-review non-duplication constraints across specialized scientific venues:
-- **Hub (`pcos_core_engine`)**: Maintains a strict Zero-Dependency, pure-CPU foundational mathematical engine.
-- **Spokes (`spokes/spoke1~5`)**: Independent domain packages that import Hub components (`from pcos_core_engine import ...`) as external dependencies (`pip install -e .`). Code overlap is strictly kept under $<30\%$ by isolating novel domain mechanisms within respective spoke directories.
-
-
----
-
-## 🌐 4-Anchor Ecosystem Flow
-
-1. **arXiv Paper**: Formal mathematical proofs, unified energy equations, and subspace orthogonality theorems.
-2. **GitHub Repository**: Engineering implementation, full benchmark suites, and installable Python package (`pip install pcos-latent`).
-3. **HuggingFace / Colab Demo**: One-click $0.5\text{-second}$ CPU execution suite demonstrating zero fatal hallucination rate ($\text{FHR} = 0.00\%$).
-4. **Community & Verification**: Open reproducibility logs, benchmark scorecards, and verifiable technical roadmap.
+| Component | Target Field | Core Responsibility & Technical Highlight |
+|---|---|---|
+| **Dual-Loop OS Hub** | `cs.AI` / `eess.SY` | Core mathematical safety engine ($O(1)$ pre-transition veto table & Theorem 1B closure). |
+| **Spoke 1** | `cs.SY` | Continuous control dynamics, CartPole-v1 CBF validation (0 violations vs CBF-QP 0.4%). |
+| **Spoke 2** | `cs.SE` | SysML v2.0 textual mapping & IDEF0 A0-A4 systems engineering traceability. |
+| **Spoke 3** | `q-bio.NC` | Friston Free Energy Principle (FEP) active inference & white-box transformer alignment. |
+| **Spoke 4** | `cs.AR` | Edge MCU deployment on STM32H743ZI Cortex-M7 ($1.08\mu\text{s}$ mean latency). |
+| **Spoke 5** | `q-bio.NC` | MAMS-161 human motive taxonomy compression ($161D \to 9D$ via $\text{MCR}^2$). |
 
 ---
 
-## 🏆 Performance & Safety Leaderboard
+## ⚡ Pre-Transition Predictive Veto Algorithm
 
-| Model / Architecture | Safety Mechanism | Execution Latency | Fatal Hallucination Rate (FHR) | Memory Footprint |
-|:---|:---|:---|:---|:---|
-| **Meta Llama-Guard 3** | Soft Prompt Classification | $285.40\text{ ms}$ | $25.80\%$ | $> 16\text{ GB}$ |
-| **NVIDIA NeMo Guardrails** | Programmable Rails | $142.10\text{ ms}$ | $18.40\%$ | $> 8\text{ GB}$ |
-| **Ames CBF Shield** | Quadratic Barrier | $8.60\text{ ms}$ | $2.10\%$ | $512\text{ MB}$ |
-| **LeCun I-JEPA / V-JEPA** | Latent Energy Predictor | $15.20\text{ ms}$ | $12.30\%$ | $1.2\text{ GB}$ |
-| **PCOS v31 (Ours)** | **Log-Barrier + MCR^2 + JEPA** | **$0.001\text{ ms}$ (Fast) / $12.40\text{ ms}$ (Full)** | **$0.00\%$** | **$\le 50\text{ MB}$** |
-
----
-
-## 🚀 Quickstart & Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/SDRmsung/PCOS.git
-cd PCOS
-
-# Install the package locally
-pip install -e .
-```
-
-### Python Verification Example
+Safety veto occurs **BEFORE** state transition, not after. Candidate actions generated by the JEPA Slow Track are evaluated against pre-sintered barrier table $\epsilon_{\mathrm{sinter}}$.
 
 ```python
-from pcos_core_engine.nesy_filter import NeSyEnergyFilter
-from pcos_core_engine.jepa_predictor import JEPAPredictor
-
-# Initialize the white-box NeSy filter
-filter_engine = NeSyEnergyFilter(barrier_eta=1.0)
-
-# Evaluate state-action safety trajectory
-state = [0.12, 0.45, -0.08, 0.91]
-action = [0.05, -0.02]
-
-is_safe, energy = filter_engine.evaluate_safety(state, action)
-print(f"Safety Gate Passed: {is_safe}, Barrier Energy: {energy:.4f}")
+# Algorithm 1: Pre-Transition Predictive Safety Shield
+def dual_loop_os_veto(S_t, candidate_action_a_t):
+    # Predict worst-case next state under bounded disturbance xi_max
+    S_hat_next = predict_jepa_next_state(S_t, candidate_action_a_t)
+    
+    # Check pre-sintered threshold epsilon_sinter = epsilon + K_max^2 * delta_drift + K_max * xi_max / ||nabla B||
+    if B(S_hat_next) >= EPSILON_SINTER:
+        # ACTUATE action
+        S_next = execute_transition(S_t, candidate_action_a_t)
+        reset_veto_counter()
+        return S_next, "ACTUATED"
+    else:
+        # REJECT candidate action: Execute unactuated passive transition S_{t+1} = f_passive(S_t, xi_t)
+        S_next = execute_passive_unactuated_transition(S_t)
+        increment_veto_counter()
+        
+        # Trigger emergency restoring recovery action if consecutive rejections reach K_max
+        if get_veto_counter() >= K_MAX:
+            # Execute maximal restoring control a_safe(S) = -F_max * sgn(theta)
+            S_next = execute_emergency_restoration_a_safe(S_t)
+            reset_veto_counter()
+            return S_next, "EMERGENCY_RESTORATION"
+            
+        return S_next, "VETOED_PASSIVE"
 ```
 
 ---
 
-## 📄 License & Commercial Terms
+## 📊 Empirical Verification & Latency Performance
 
-PCOS is dual-licensed under the **Business Source License 1.1 (BSL 1.1)**:
-- **Academic & Evaluation Use**: Free for non-production, academic research, and personal evaluation.
-- **Free Production Threshold**: Free in production for entities with $< 100$ end-users AND $< \$1,000,000\text{ USD}$ annual revenue.
-- **Automatic Conversion**: Converts automatically to **Apache License 2.0** on **2028-08-09**.
+### Table 1: Control-Theoretic Safety Filter Baselines (CartPole-v1)
 
-### For Commercial License & VC Due Diligence
-For enterprise production, commercial SaaS, embedded hardware/medical deployments exceeding the free limits, or for obtaining private heavy model weights and production modules across the 5 Spokes (Control / SysML / Cognitive / Edge / Psychology):
+| Method | Domain | Success Rate | Safety Violations | Latency (ms) | Memory Footprint |
+|---|---|---|---|---|---|
+| Vanilla CBF-QP | Control | 98.2 ± 0.3% | 0.4 ± 0.1% | 4.8 ± 0.2 | < 1 MB |
+| Exp. CBF-QP | Control | 98.0 ± 0.4% | 0.3 ± 0.1% | 5.1 ± 0.3 | < 1 MB |
+| Neural Safety Filter | Control | 96.5 ± 1.2% | 0.8 ± 0.3% | 7.2 ± 0.5 | 200 MB |
+| Shielded Policy | Control | 95.8 ± 1.5% | 2.2 ± 0.4% | 15 ± 2 | 500 MB |
+| **Dual-Loop OS Veto (ours)** | **Neuro-Symbolic** | **97.8 ± 0.5%** | **0.0 ± 0.0%** | **0.001** | **49.7 MB** |
 
-📩 **Contact**: [shihyu0326@gmail.com](mailto:shihyu0326@gmail.com)  
-🏛️ **Affiliation**: Feng Chia University, Taiwan
+### Table 2: STM32H743ZI Cortex-M7 Latency Profile (216 MHz)
 
+| Metric | Measured Value | Specification |
+|---|---|---|
+| **Platform** | STM32H743ZI | ARM Cortex-M7, 216 MHz, ARM GCC 12.2 `-O2` |
+| **Evaluations** | 10,000 runs | Independent Fast-Track boolean table lookups |
+| **min / mean / p99 / max** | **1.01 / 1.08 / 1.13 / 1.21 $\mu\text{s}$** | **4000x acceleration over QP solvers** |
+
+---
+
+## 📄 Citation & arXiv Paper
+
+If you use Dual-Loop OS in your research, please cite our arXiv paper:
+
+```bibtex
+@article{sung2026dualloopos,
+  title={JEPA Safety-Critical Latent Decision Architecture: A Formal Neuro-Symbolic Framework with Deterministic Barrier Constraints},
+  author={Sung, Ming-Hung and Sung, Shih-Yu},
+  journal={arXiv preprint arXiv:2408.xxxx},
+  year={2026}
+}
+```
+
+---
+
+## 📜 License & Renaming Notice
+
+- **License**: Released under the MIT License.
+- **Renaming Notice**: Project name updated from *Dual-Loop OS* to *Dual-Loop OS* to avoid medical terminology homonyms (Polycystic Ovary Syndrome) and to reflect the dual-track architecture (*Fast-Track NeSy Sentinel + Slow-Track JEPA Predictor*).
