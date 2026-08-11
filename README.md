@@ -1,6 +1,6 @@
 # Dual-Loop OS: JEPA Safety-Critical Latent Decision Architecture
 
-[![arXiv](https://img.shields.io/badge/arXiv-2408.xxxx-b31b1b.svg)](https://github.com/SDRmsung/Dual-Loop_OS)
+[![arXiv](https://img.shields.io/badge/arXiv-2408.xxxx-b31b1b.svg)](https://github.com/SDRmsung/DLOS)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![MCU Latency](https://img.shields.io/badge/Cortex--M7-1.08%CE%BCs-brightgreen.svg)]()
