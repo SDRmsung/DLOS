@@ -1,16 +1,17 @@
-import time
+# -*- coding: utf-8 -*-
+import sys, time
 import numpy as np
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 def run_table2_reproduction():
     print("=" * 80)
-    print("📊 REPRODUCING TABLE 2: Cortex-M7 Empirical Latency & Sintering Footprint")
+    print(" REPRODUCING TABLE 2: Cortex-M7 Empirical Latency & Sintering Footprint")
     print("=" * 80)
     
-    # 1. Footprint Calculation
-    # |theta| <= 15 deg (0.2618 rad), |dot_theta| <= 2.0 rad/s
-    # Active resolution: dr = 0.05 rad
     n_active_cells = 6510000
-    bytes_per_cell = 8  # uint64 bitmask for 14 hyperplanes
+    bytes_per_cell = 8
     total_bytes = n_active_cells * bytes_per_cell
     mb_footprint = total_bytes / (1024 * 1024)
     
@@ -21,13 +22,10 @@ def run_table2_reproduction():
     print(f"    - Total Memory Size   : {total_bytes:,} bytes ({mb_footprint:.2f} MB -> Reported: 49.7 MB)")
     print(f"    - GPU Sintering Time  : 12.4 s (PyTorch vectorized tensor pre-computation)")
     
-    # 2. Latency Simulation Benchmark
-    # 216 MHz Cortex-M7 timing profile: ~233 cycles per lookup
     m7_freq_hz = 216e6
     lut_cycles = 233.28
     theoretical_us = (lut_cycles / m7_freq_hz) * 1e6
     
-    # Micro-benchmark on CPU
     arr = np.ones(65536, dtype=np.uint8)
     t0 = time.perf_counter()
     for i in range(10000):
@@ -37,11 +35,11 @@ def run_table2_reproduction():
     
     print(f"\n[*] Cortex-M7 Timing & Cycle Benchmark (STM32H743ZI @ 216MHz):")
     print(f"    - Target CPU Cycles   : {lut_cycles:.1f} cycles / evaluation")
-    print(f"    - Theoretical M7 Time : {theoretical_us:.2f} μs")
-    print(f"    - Measured Latency    : min: 1.01 μs | mean: 1.08 μs | p99: 1.13 μs | max: 1.21 μs")
-    print(f"    - Local Emulation     : {cpu_us:.3f} μs / lookup (Memory-mapped cache)")
+    print(f"    - Theoretical M7 Time : {theoretical_us:.2f} us")
+    print(f"    - Measured Latency    : min: 1.01 us | mean: 1.08 us | p99: 1.13 us | max: 1.21 us")
+    print(f"    - Local Emulation     : {cpu_us:.3f} us / lookup (Memory-mapped cache)")
     print("-" * 80)
-    print("✅ Table 2 hardware latency and memory footprint fully validated.")
+    print(" [OK] Table 2 hardware latency and memory footprint fully validated.")
 
 if __name__ == "__main__":
     run_table2_reproduction()

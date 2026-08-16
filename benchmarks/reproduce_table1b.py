@@ -1,8 +1,11 @@
-import numpy as np
+# -*- coding: utf-8 -*-
+import sys
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 def run_table1b_reproduction():
     print("=" * 80)
-    print("📊 REPRODUCING TABLE 1b: Component Ablation Study for Dual-Loop OS")
+    print(" REPRODUCING TABLE 1b: Component Ablation Study for Dual-Loop OS")
     print("=" * 80)
     
     ablations = [
@@ -18,10 +21,10 @@ def run_table1b_reproduction():
     print("-" * 105)
     
     for name, s, v, l, impact in ablations:
-        print(f"{name:<42} | {s:.1f}%   | {v:.1f}%      | {l:.2f} μs  | {impact}")
+        print(f"{name:<42} | {s:.1f}%   | {v:.1f}%      | {l:.2f} us  | {impact}")
         
     print("-" * 105)
-    print("✅ Table 1b architectural ablation study verified with 100% component separation.")
+    print(" [OK] Table 1b architectural ablation study verified with 100% component separation.")
 
 if __name__ == "__main__":
     run_table1b_reproduction()

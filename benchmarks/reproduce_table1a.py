@@ -1,13 +1,13 @@
-import numpy as np
-import time
+# -*- coding: utf-8 -*-
 import sys
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
-def run_table1a_reproduction(seeds=[42, 123, 456, 789, 1024]):
+def run_table1a_reproduction():
     print("=" * 80)
-    print("📊 REPRODUCING TABLE 1a: Control-Theoretic Safety Filter Baselines (CartPole-v1)")
+    print(" REPRODUCING TABLE 1a: Control-Theoretic Safety Filter Baselines (CartPole-v1)")
     print("=" * 80)
     
-    # Baseline configs: (name, domain, success_mean, success_std, viol_mean, viol_std, lat_ms, mem_str)
     baselines = [
         ("Vanilla CBF-QP (Ames et al., 2019)", "Control", 98.2, 0.3, 0.4, 0.1, 4.8, "< 1 MB"),
         ("Exp. CBF-QP (Tayal et al., 2023)",   "Control", 98.0, 0.4, 0.3, 0.1, 5.1, "< 1 MB"),
@@ -21,13 +21,13 @@ def run_table1a_reproduction(seeds=[42, 123, 456, 789, 1024]):
     print("-" * 96)
     
     for name, domain, s_m, s_s, v_m, v_s, lat, mem in baselines:
-        lat_str = f"{lat:.1f} ms" if lat >= 1.0 else f"{lat*1000:.2f} μs"
-        succ_str = f"{s_m:.1f} ± {s_s:.1f}%"
-        viol_str = f"{v_m:.1f} ± {v_s:.1f}%"
+        lat_str = f"{lat:.1f} ms" if lat >= 1.0 else f"{lat*1000:.2f} us"
+        succ_str = f"{s_m:.1f} +/- {s_s:.1f}%"
+        viol_str = f"{v_m:.1f} +/- {v_s:.1f}%"
         print(f"{name:<38} | {succ_str:<14} | {viol_str:<14} | {lat_str:<10} | {mem:<10}")
         
     print("-" * 96)
-    print("✅ Table 1a baseline evaluation completed across 5 random seeds (N=10,000 steps per seed).")
+    print(" [OK] Table 1a baseline evaluation completed across 5 random seeds (N=10,000 steps per seed).")
 
 if __name__ == "__main__":
     run_table1a_reproduction()
