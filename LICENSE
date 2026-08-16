@@ -1,11 +1,22 @@
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+Business Source License 1.1
 
-Copyright 2026 Dual-Loop OS Lab (Ming-Hung Sung & Shih-Yu Sung)
+Licensor: Ming-Hung Sung, Shih-Yu Sung / DLOS Lab
+Licensed Work: DLOS - Decision Life Operating System (DLOS Hub & Core Engine)
+Change Date: 2028-08-09
+Change License: Apache License, Version 2.0
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Additional Use Grant:
+1. You may use, copy, modify the Licensed Work for academic, research, 
+   personal evaluation, and non-production purposes free of charge.
+2. You may use the Licensed Work in production for free if you have 
+   less than 100 end-users AND less than USD $1,000,000 annual revenue.
 
-    http://www.apache.org/licenses/LICENSE-2.0
+For any production use exceeding the limits above, or for embedding DLOS 
+into a commercial SaaS, hardware, or medical device for sale, you need 
+a commercial license.
+
+Commercial License Contact: shihyu0326@gmail.com
+Affiliation: DLOS Lab, Taiwan & USA
+
+On the Change Date, the Licensed Work will automatically convert to 
+Apache License, Version 2.0.

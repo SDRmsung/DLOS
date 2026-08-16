@@ -1,19 +1,18 @@
 # Dual-Loop OS: Neuro-Symbolic Safety Shield for JEPA Latent Decision Systems
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SDRmsung/DLOS/blob/main/demo_colab.ipynb)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: BSL 1.1](https://img.shields.io/badge/License-BSL_1.1-blue.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![arXiv](https://img.shields.io/badge/arXiv-cs.AI%20%2F%20eess.SY-b31b1b.svg)](https://arxiv.org/)
 
-Official standalone, zero-dependency reproducibility package for the paper:  
+Official standalone, zero-dependency reproducibility package for the initial submission manuscript:  
 **"JEPA Safety-Critical Latent Decision Architecture: A Formal Neuro-Symbolic Framework with Deterministic Barrier Constraints"**  
-*Ming-Hung Sung & Shih-Yu Sung (Dual-Loop OS Lab)*
+*Ming-Hung Sung (Taichung, Taiwan) & Shih-Yu Sung (Lake City, SC, USA)*
 
 ---
 
 ## ⚡ 1-Click Zero-Dependency Reproducibility (< 0.5s)
 
-You can run the entire verification harness directly in **Google Colab** with zero installation:
+You can run the entire formal verification suite directly in **Google Colab** with zero installation:
 1. Click the **[Open in Colab](https://colab.research.google.com/github/SDRmsung/DLOS/blob/main/demo_colab.ipynb)** badge above.
 2. In the Colab menu, click **Runtime -> Run all** (`Ctrl+F9`).
 3. All 5 formal checkpoints (Table 1a, Table 1b, Theorem 1B/1C, and Cortex-M7 latency) execute in **< 0.5 seconds** on standard CPU.
@@ -36,28 +35,20 @@ DLOS/
 ├── demo_colab.ipynb               # Interactive Jupyter/Colab notebook
 ├── setup.py                       # Python packaging configuration
 ├── requirements.txt               # Minimal dependencies (numpy, scipy, torch)
-├── LICENSE                        # Apache-2.0 open-source license
+├── LICENSE                        # Business Source License 1.1 (BSL 1.1)
 │
 ├── dlos/                          # Core Python Engine
 │   ├── __init__.py                # Package exports
-│   ├── jepa_latent.py             # JEPA latent predictor & Tri-term energy minimization
-│   ├── mcr2_manifold.py           # MCR2 subspace orthogonal decomposition (Tr < 1e-7)
-│   ├── polyhedral_shield.py       # 14-hyperplane pre-sintered barrier & Algorithm 1
-│   └── scm_engine.py              # Pearl L3 Structural Causal Model & STE operator
+│   └── polyhedral_shield.py       # 14-hyperplane pre-sintered barrier & Algorithm 1
 │
 ├── benchmarks/                    # Formal Experiment Reproductions
-│   ├── run_cartpole_cbf.py        # Table 1a: CartPole-v1 closed-loop vs CBF-QP baselines
-│   ├── run_ablation_study.py      # Table 1b: 5-component architectural ablation
-│   └── reproduce_all.py           # Master 1-click test suite runner
+│   └── run_cartpole_cbf.py        # Table 1a: CartPole-v1 closed-loop vs CBF-QP baselines
 │
 ├── firmware/                      # STM32 Cortex-M7 Microsecond Deployment
-│   ├── cortex_m7_sintered_lut.h   # Pre-sintered 49.7 MB / compressed lookup table
-│   ├── main_stm32h7.c             # STM32H743ZI C driver (1.08 us online latency)
-│   └── Makefile                   # ARM-GCC compilation harness
+│   └── main_stm32h7.c             # STM32H743ZI C driver (1.08 us online latency)
 │
 └── tests/                         # Formal Mathematical Unit Tests
-    ├── test_forward_invariance.py # Unit tests for Theorem 1B/1C mathematical induction
-    └── test_phase_space_lemma1.py # Unit tests for Lemma 1 phase-space recovery attractor
+    └── test_forward_invariance.py # Unit tests for Theorem 1B/1C mathematical induction
 ```
 
 ---
@@ -73,34 +64,18 @@ DLOS/
 
 ---
 
-## 🛠️ Local Installation & Development
-
-```bash
-# Clone the repository
-git clone https://github.com/SDRmsung/DLOS.git
-cd DLOS
-
-# Install in editable mode
-pip install -e .
-
-# Run formal unit tests
-python -m unittest discover tests/
-
-# Run CartPole benchmark reproduction
-python benchmarks/run_cartpole_cbf.py
-```
-
----
-
 ## 📜 Citation & License
 
-If you use Dual-Loop OS in your research, please cite our arXiv preprint:
+This is an initial research submission. For academic reference:
 ```bibtex
 @article{sung2026dualloopos,
   title={JEPA Safety-Critical Latent Decision Architecture: A Formal Neuro-Symbolic Framework with Deterministic Barrier Constraints},
   author={Sung, Ming-Hung and Sung, Shih-Yu},
-  journal={arXiv preprint arXiv:2608.xxxxx},
+  note={Manuscript under review},
   year={2026}
 }
 ```
-Released under the [Apache-2.0 License](LICENSE).
+
+- **Paper Manuscript**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Core Software Engine**: [Business Source License 1.1 (BSL 1.1)](LICENSE) (Free for non-commercial academic research; converts to Apache 2.0 on 2028-08-09).
+- **Demo Script (`demo_colab.py`)**: [MIT License](https://opensource.org/licenses/MIT).
