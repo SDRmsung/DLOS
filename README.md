@@ -6,7 +6,7 @@
 
 Official standalone, zero-dependency reproducibility package for the initial submission manuscript:  
 **"JEPA Safety-Critical Latent Decision Architecture: A Formal Neuro-Symbolic Framework with Deterministic Barrier Constraints"**  
-*Ming-Hung Sung (Taichung, Taiwan) & Shih-Yu Sung (Lake City, SC, USA)*
+*Ming-Hung Sung [ORCID: [0009-0003-3305-0637](https://orcid.org/0009-0003-3305-0637)] & Shih-Yu Sung*
 
 ---
 
