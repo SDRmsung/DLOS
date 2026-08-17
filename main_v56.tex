@@ -1,0 +1,73 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{caption}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{assumption}{Assumption}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+\title{\textbf{JEPA Safety-Critical Latent Decision Architecture:\\A Formal Neuro-Symbolic Framework with Deterministic Barrier Constraints}}
+
+\author{Ming-Hung Sung\thanks{Independent Researcher, Taichung, Taiwan. Email: \texttt{sdrmsung@gmail.com}, ORCID: \href{https://orcid.org/0009-0003-3305-0637}{0009-0003-3305-0637}} \and Shih-Yu Sung\thanks{Independent Researcher, Lake City, SC, USA. Email: \texttt{shihyu0326@gmail.com}}}
+\institute{Dual-Loop OS Lab}\thanks{ORCID: \href{https://orcid.org/0009-0003-3305-0637}{0009-0003-3305-0637}}}$^1$, \textbf{Shih-Yu Sung}$^2$ \\
+$^1$Independent Researcher, Taichung, Taiwan \\
+$^2$Independent Researcher, Lake City, SC, USA \\
+\small{\texttt{Contact: shihyu0326@gmail.com | Repository: \url{https://github.com/SDRmsung/DLOS}}}
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Joint Embedding Predictive Architectures (JEPAs) provide powerful generative latent world models for multi-objective decision making, yet their deployment in safety-critical systems is hindered by out-of-distribution (OOD) latent drift and the absence of hard safety guarantees. We present \textbf{Dual-Loop OS}, a dual-timescale neuro-symbolic architecture for discrete-time systems under bounded additive disturbances and latent drift ($\|\xi\| \le \xi_{\max}$). The architecture coordinates: (1) a Slow Track running a CRATE Transformer encoder ($E_\theta: \mathbb{R}^4 \to \mathbb{R}^{13}$) structuring latent representations via $\mathrm{MCR}^2$---decoupling a 9D motive manifold $\mathcal{M}_{9\mathrm{D}}$ (theoretically inspired by multi-objective goal taxonomies, e.g., Talevich et al., 2017) from a 4D safety subspace $\mathcal{S}_{4\mathrm{D}}$---generating candidate actions via latent MPPI planning; and (2) a Fast Track deterministically evaluating actions against a 14-hyperplane pre-sintered safety polytope in closed-form ($1.08\,\mu\mathrm{s}$, 233 cycles @ 216 MHz on Cortex-M7 instruction timing model). Inductive mathematical proofs (Theorems 1B and 1C) guarantee discrete-time forward invariance ($B(S_t) \ge \epsilon$) and finite-time margin restoration under active brake override. Across 50,000 steps ($N=50$ episodes) on CartPole-v1 ($E_\theta: \mathbb{R}^4 \to \mathbb{R}^{13}$), Dual-Loop OS achieves $0.0 \pm 0.0\%$ safety violations with $97.8 \pm 0.5\%$ success rate, yielding $6.33\times$ marginal safety leverage over unshielded policies. Non-parametric Fisher's exact test ($p = 3.44 \times 10^{-4}$) and non-overlapping 95\% Clopper-Pearson exact intervals ($[0.00\%, 7.11\%]$ vs $[13.06\%, 38.17\%]$) confirm statistically significant violation elimination.
+\end{abstract}
+
+\section{Introduction}
+Latent world models, such as Joint Embedding Predictive Architecture (JEPA), provide expressive latent representations for autonomous decision-making. However, JEPA lacks mathematical safety guarantees, risking out-of-distribution (OOD) dynamic prediction drift in safety-critical applications. 
+
+To resolve this fundamental tension between representation learning and safety, we present \textbf{Dual-Loop OS}, a neuro-symbolic safety architecture that constrains a JEPA-based latent decision system via formal control barrier functions (CBFs).
+
+\begin{figure}[h]
+\centering
+\begin{verbatim}
++---------------------------------------------------+
+|             DUAL-LOOP OS ARCHITECTURE             |
+|                                                   |
+|  [JEPA Slow Track] --(a_t)--> [Safety Shield]     |
+|         |                            | (Veto)     |
+|         v                            v            |
+|  [Pearl L3 SCM] <-------- [Emergency Recovery]    |
++---------------------------------------------------+
+\end{verbatim}
+\caption{Dual-Loop OS architecture overview. Fast Track pre-transition safety shield evaluates candidate actions before actuation.}
+\label{fig:arch_ascii}
+\end{figure}
+
+Safety is enforced strictly by the CBF safety shield via pre-transition predictive veto (Algorithm~\ref{alg:safety_shield}), independent of JEPA latent prediction weights.
+
+\section{Related Work}
+
+\subsection{Control Barrier Functions \& Safety Filters}
+Control Barrier Functions (CBFs; \citealp{ames2019control,tayal2023exponential}) provide formal set-theoretic guarantees for forward invariance in continuous control-affine systems. Traditional safe control architectures formulate a Quadratic Program (CBF-QP) solved online at each cycle. However, online optimization introduces significant computational latency ($4.8 \sim 15\,\mathrm{ms}$) and risk of infeasibility near boundary intersections. While Explicit MPC \citep{bemporad2002explicit} pre-computes polyhedral regions for microsecond execution, it suffers from exponential critical region explosion ($N_{\mathrm{regions}} > 10^5$) in high dimensions. Dual-Loop OS resolves this limitation by replacing online QP solvers with a pre-sintered $O(1)$ polyhedral feasibility bitmask filter.
+
+\subsection{Safe Exploration in World Models \& Latent Spaces}
+In model-based reinforcement learning and World Models (DreamerV2/V3; \citealp{hafner2020mastering,hafner2023mastering}), policies are optimized within compact latent imagination spaces. However, enforcing safety constraints in latent spaces remains challenging. Constrained World Models \citep{as2022constrained} and Latent CBFs \citep{zhao2023latent} incorporate heuristic cost penalties into the Lagrangian objective, which cannot guarantee zero boundary violations under out-of-distribution drift. In non-contrastive Joint Embedding Predictive Architectures (JEPA; \citealp{lecun2022path,bardes2024vjepa}), representation learning lacks explicit geometric regularization against collapse without negative sample pairs. Dual-Loop OS addresses this by integrating the Principle of Maximal Coding Rate Reduction ($\mathrm{MCR}^2$; \citealp{yu2020learning}) to enforce orthogonal subspace decomposition ($\mathcal{M}_{9\mathrm{D}} \perp \mathcal{S}_{4\mathrm{D}}$), providing formal discrete-time forward invariance directly bridged to a JEPA latent predictor.
+
